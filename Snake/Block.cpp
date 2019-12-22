@@ -6,17 +6,17 @@ Block::Block()
 {
 	// Default Block definition
 	coordinate = Coordinate(0, 0);
-	direction = EAST;
+	direction = DIRECTION::EAST;
 }
 
 Block::Block(Coordinate coordinate) {
 	this->coordinate = coordinate;
-	direction = EAST;
+	direction = DIRECTION::EAST;
 }
 
 Block::Block(int x, int y) {
 	coordinate = Coordinate(x, y);
-	direction = EAST;
+	direction = DIRECTION::EAST;
 }
 
 Block::~Block()
@@ -34,16 +34,16 @@ void Block::setCoordinate(Coordinate coordinate) {
 void Block::moveNextPoint() {
 	switch (direction)
 	{
-	case EAST:
+	case DIRECTION::EAST:
 		coordinate = Coordinate(coordinate.getX(), coordinate.getY() + 1);
 		break;
-	case WEST:
+	case DIRECTION::WEST:
 		coordinate = Coordinate(coordinate.getX(), coordinate.getY() - 1);
 		break;
-	case NORTH:
+	case DIRECTION::NORTH:
 		coordinate = Coordinate(coordinate.getX() - 1, coordinate.getY());
 		break;
-	case SOUTH:
+	case DIRECTION::SOUTH:
 		coordinate = Coordinate(coordinate.getX() + 1, coordinate.getY());
 		break;
 	}
@@ -56,16 +56,16 @@ void Block::setDirection(DIRECTION direction) {
 Coordinate Block::getNextPosition(DIRECTION direction) {
 	Coordinate coordinate;
 	switch (direction) {
-	case EAST:
+	case DIRECTION::EAST:
 		coordinate = Coordinate(this->coordinate.getX(), this->coordinate.getY() + 1);
 		break;
-	case WEST:
+	case DIRECTION::WEST:
 		coordinate = Coordinate(this->coordinate.getX(), this->coordinate.getY() - 1);
 		break;
-	case NORTH:
+	case DIRECTION::NORTH:
 		coordinate = Coordinate(this->coordinate.getX() - 1, this->coordinate.getY());
 		break;
-	case SOUTH:
+	case DIRECTION::SOUTH:
 		coordinate = Coordinate(this->coordinate.getX() + 1, this->coordinate.getY());
 		break;
 	}
@@ -75,16 +75,16 @@ Coordinate Block::getNextPosition(DIRECTION direction) {
 Coordinate Block::getPrevPosition(DIRECTION direction) {
 	Coordinate coordinate;
 	switch (direction) {
-	case EAST:
+	case DIRECTION::EAST:
 		coordinate = Coordinate(this->coordinate.getX(), this->coordinate.getY() - 1);
 		break;
-	case WEST:
+	case DIRECTION::WEST:
 		coordinate = Coordinate(this->coordinate.getX(), this->coordinate.getY() + 1);
 		break;
-	case NORTH:
+	case DIRECTION::NORTH:
 		coordinate = Coordinate(this->coordinate.getX() + 1, this->coordinate.getY());
 		break;
-	case SOUTH:
+	case DIRECTION::SOUTH:
 		coordinate = Coordinate(this->coordinate.getX() - 1, this->coordinate.getY());
 		break;
 	}

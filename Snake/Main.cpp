@@ -41,14 +41,14 @@ void thread_keyboard_listener(UserInput* userInput, Ssnake* snake) {
 		{
 		case 72:
 			switch (userInput->getCurrentCheckPoint().getDirection()) {
-			case WEST:
-			case EAST:
+			case DIRECTION::WEST:
+			case DIRECTION::EAST:
 				Coordinate coordinate(
 					snake->getLastBlock().getCoordinate().getX(),
 					snake->getLastBlock().getCoordinate().getY()
 					);
 
-				CheckPoint currentCheckPoint(coordinate, NORTH);
+				CheckPoint currentCheckPoint(coordinate, DIRECTION::NORTH);
 				userInput->setCurrentCheckPoint(currentCheckPoint);
 				userInput->pushCheckPoint(currentCheckPoint);
 				break;
@@ -56,14 +56,14 @@ void thread_keyboard_listener(UserInput* userInput, Ssnake* snake) {
 			break;
 		case 80:
 			switch (userInput->getCurrentCheckPoint().getDirection()) {
-			case WEST:
-			case EAST:
+			case DIRECTION::WEST:
+			case DIRECTION::EAST:
 				Coordinate coordinate(
 					snake->getLastBlock().getCoordinate().getX(),
 					snake->getLastBlock().getCoordinate().getY()
 					);
 
-				CheckPoint currentCheckPoint(coordinate, SOUTH);
+				CheckPoint currentCheckPoint(coordinate, DIRECTION::SOUTH);
 				userInput->setCurrentCheckPoint(currentCheckPoint);
 				userInput->pushCheckPoint(currentCheckPoint);
 				break;
@@ -71,14 +71,14 @@ void thread_keyboard_listener(UserInput* userInput, Ssnake* snake) {
 			break;
 		case 75:
 			switch (userInput->getCurrentCheckPoint().getDirection()) {
-			case NORTH:
-			case SOUTH:
+			case DIRECTION::NORTH:
+			case DIRECTION::SOUTH:
 				Coordinate coordinate(
 					snake->getLastBlock().getCoordinate().getX(),
 					snake->getLastBlock().getCoordinate().getY()
 					);
 
-				CheckPoint currentCheckPoint(coordinate, WEST);
+				CheckPoint currentCheckPoint(coordinate, DIRECTION::WEST);
 				userInput->setCurrentCheckPoint(currentCheckPoint);
 				userInput->pushCheckPoint(currentCheckPoint);
 				break;
@@ -86,14 +86,14 @@ void thread_keyboard_listener(UserInput* userInput, Ssnake* snake) {
 			break;
 		case 77:
 			switch (userInput->getCurrentCheckPoint().getDirection()) {
-			case NORTH:
-			case SOUTH:
+			case DIRECTION::NORTH:
+			case DIRECTION::SOUTH:
 				Coordinate coordinate(
 					snake->getLastBlock().getCoordinate().getX(),
 					snake->getLastBlock().getCoordinate().getY()
 					);
 
-				CheckPoint currentCheckPoint(coordinate, EAST);
+				CheckPoint currentCheckPoint(coordinate, DIRECTION::EAST);
 				userInput->setCurrentCheckPoint(currentCheckPoint);
 				userInput->pushCheckPoint(currentCheckPoint);
 				break;

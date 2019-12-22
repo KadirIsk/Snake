@@ -4,11 +4,11 @@
 
 UserInput::UserInput()
 {
-	currentCheckPoint = CheckPoint(Coordinate(-1, -1), EAST);
+	currentCheckPoint = CheckPoint(Coordinate(-1, -1), DIRECTION::EAST);
 }
 
 UserInput::UserInput(deque<CheckPoint> listOfCheckPoint) {
-	currentCheckPoint = CheckPoint(Coordinate(-1, -1), EAST);
+	currentCheckPoint = CheckPoint(Coordinate(-1, -1), DIRECTION::EAST);
 	this->listOfCheckPoint = listOfCheckPoint;
 }
 

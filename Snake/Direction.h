@@ -1,7 +1,7 @@
 #pragma once
 #ifndef DIRECTION_H
 #define DIRECTION_H
-enum DIRECTION
+enum class DIRECTION
 {
 	EAST,
 	WEST,

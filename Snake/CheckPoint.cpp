@@ -5,7 +5,7 @@
 CheckPoint::CheckPoint()
 {
 	coordinate = Coordinate(-1, -1);
-	direction = EAST;
+	direction = DIRECTION::EAST;
 }
 
 CheckPoint::CheckPoint(Coordinate coordiante, DIRECTION direction) {
